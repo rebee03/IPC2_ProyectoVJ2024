@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<compras>
+	<comprar numero="1">
+		<usuario id="1">Monica Deleon</usuario>
+		<productos>
+			<producto id="IPCMK-5">
+				<nombre>Pasta Spagetti</nombre>
+				<cantidad>5</cantidad>
+			</producto>
+		</productos>
+	</comprar>
+</compras>

@@ -1,0 +1,117 @@
+digraph G {
+    graph [pad="0.5", nodesep="1", ranksep="1"];
+    label="Matriz Dispersa"
+    node [shape=box, height=0.8];
+	Fila2[style="filled" label = "2" fillcolor="white" group = 0];
+	Fila5[style="filled" label = "5" fillcolor="white" group = 0];
+	Fila6[style="filled" label = "6" fillcolor="white" group = 0];
+	Fila11[style="filled" label = "11" fillcolor="white" group = 0];
+	Fila13[style="filled" label = "13" fillcolor="white" group = 0];
+	Fila15[style="filled" label = "15" fillcolor="white" group = 0];
+	Fila16[style="filled" label = "16" fillcolor="white" group = 0];
+	Fila18[style="filled" label = "18" fillcolor="white" group = 0];
+	Fila20[style="filled" label = "20" fillcolor="white" group = 0];
+	Fila22[style="filled" label = "22" fillcolor="white" group = 0];
+	Fila23[style="filled" label = "23" fillcolor="white" group = 0];
+
+    edge[dir="both"];
+    	Fila2 -> Fila5;
+	Fila5 -> Fila6;
+	Fila6 -> Fila11;
+	Fila11 -> Fila13;
+	Fila13 -> Fila15;
+	Fila15 -> Fila16;
+	Fila16 -> Fila18;
+	Fila18 -> Fila20;
+	Fila20 -> Fila22;
+	Fila22 -> Fila23;
+
+    edge[dir="both"]
+    Columna1 -> NodoF5_C1[dir=""];
+NodoF5_C1 -> NodoF11_C1;
+NodoF11_C1 -> NodoF22_C1;
+Columna2 -> NodoF6_C2[dir=""];
+NodoF6_C2 -> NodoF16_C2;
+NodoF16_C2 -> NodoF18_C2;
+Columna3 -> NodoF13_C3[dir=""];
+NodoF13_C3 -> NodoF15_C3;
+NodoF15_C3 -> NodoF22_C3;
+Columna4 -> NodoF20_C4[dir=""];
+NodoF20_C4 -> NodoF22_C4;
+NodoF22_C4 -> NodoF23_C4;
+Columna5 -> NodoF16_C5[dir=""];
+Columna6 -> NodoF2_C6[dir=""];
+Columna7 -> NodoF22_C7[dir=""];
+	Columna1[style="filled" label = "1" fillcolor="white" group = 1];
+	Columna2[style="filled" label = "2" fillcolor="white" group = 2];
+	Columna3[style="filled" label = "3" fillcolor="white" group = 3];
+	Columna4[style="filled" label = "4" fillcolor="white" group = 4];
+	Columna5[style="filled" label = "5" fillcolor="white" group = 5];
+	Columna6[style="filled" label = "6" fillcolor="white" group = 6];
+	Columna7[style="filled" label = "7" fillcolor="white" group = 7];
+Columna1 -> Columna2;
+Columna2 -> Columna3;
+Columna3 -> Columna4;
+Columna4 -> Columna5;
+Columna5 -> Columna6;
+Columna6 -> Columna7;
+
+	{rank = same; Columna1; Columna2; Columna3; Columna4; Columna5; Columna6; Columna7; }
+	NodoF2_C6[style="filled" label = "ID: 5\nNombre: Inventario\nDescripción: Realizar inventario de los productos en el almacén\nEmpleado: Gil Rovira Robledo\nDía: 6
+Hora: 2:00" group = 6];
+	Fila2 -> NodoF2_C6[dir=""];
+	NodoF5_C1[style="filled" label = "ID: 3\nNombre: Asesoría al cliente\nDescripción: Asesorar a los clientes sobre los productos\nEmpleado: Leonardo Mayoral Gonzalez\nDía: 1
+Hora: 5:00" group = 1];
+	Fila5 -> NodoF5_C1[dir=""];
+	NodoF6_C2[style="filled" label = "ID: 11\nNombre: Recepción de mercancía\nDescripción: Recepción y revisión de la mercancía entrante\nEmpleado: Cecilia Folch-Calatayud\nDía: 2
+Hora: 6:00" group = 2];
+	Fila6 -> NodoF6_C2[dir=""];
+	NodoF11_C1[style="filled" label = "ID: 12\nNombre: Organización de almacén\nDescripción: Organizar los productos en el almacén\nEmpleado: Cloe Gallart Vega\nDía: 1
+Hora: 11:00" group = 1];
+	Fila11 -> NodoF11_C1[dir=""];
+	NodoF13_C3[style="filled" label = "ID: 10\nNombre: Cobro en caja\nDescripción: Cobrar a los clientes en la caja registradora\nEmpleado: Cecilia Folch-Calatayud\nDía: 3
+Hora: 13:00" group = 3];
+	Fila13 -> NodoF13_C3[dir=""];
+	NodoF15_C3[style="filled" label = "ID: 7\nNombre: Atención al Cliente\nDescripción: Atender a los clientes de la tienda\nEmpleado: Juan Bautista Pascual Arellano Conde\nDía: 3
+Hora: 15:00" group = 3];
+	Fila15 -> NodoF15_C3[dir=""];
+	NodoF16_C2[style="filled" label = "ID: 14\nNombre: Preparación de pedidos\nDescripción: Preparar los pedidos para su envío\nEmpleado: Mar Herrera Díez\nDía: 2
+Hora: 16:00" group = 2];
+	Fila16 -> NodoF16_C2[dir=""];
+	NodoF16_C2 -> NodoF16_C5;
+	NodoF16_C5[style="filled" label = "ID: 8\nNombre: Inventario\nDescripción: Realizar inventario de los productos en el almacén\nEmpleado: Carlos Onofre Palmer Pagès\nDía: 5
+Hora: 16:00" group = 5];
+	NodoF18_C2[style="filled" label = "ID: 13\nNombre: Atención al Cliente\nDescripción: Atender a los clientes de la tienda\nEmpleado: Dionisia Cazorla Pomares\nDía: 2
+Hora: 18:00" group = 2];
+	Fila18 -> NodoF18_C2[dir=""];
+	NodoF20_C4[style="filled" label = "ID: 2\nNombre: Asesoría al cliente\nDescripción: Asesorar a los clientes sobre los productos\nEmpleado: Clímaco Flor Mariscal\nDía: 4
+Hora: 20:00" group = 4];
+	Fila20 -> NodoF20_C4[dir=""];
+	NodoF22_C1[style="filled" label = "ID: 4\nNombre: Recepción de mercancía\nDescripción: Recepción y revisión de la mercancía entrante\nEmpleado: Marcio Adadia\nDía: 1
+Hora: 22:00" group = 1];
+	Fila22 -> NodoF22_C1[dir=""];
+	NodoF22_C1 -> NodoF22_C3;
+	NodoF22_C3[style="filled" label = "ID: 6\nNombre: Preparación de pedidos\nDescripción: Preparar los pedidos para su envío\nEmpleado: Arsenio del Narváez\nDía: 3
+Hora: 22:00" group = 3];
+	NodoF22_C3 -> NodoF22_C4;
+	NodoF22_C4[style="filled" label = "ID: 9\nNombre: Limpieza de estanterías\nDescripción: Limpiar y ordenar las estanterías del pasillo 1\nEmpleado: Marcio Adadia\nDía: 4
+Hora: 22:00" group = 4];
+	NodoF22_C4 -> NodoF22_C7;
+	NodoF22_C7[style="filled" label = "ID: 15\nNombre: Preparación de pedidos\nDescripción: Preparar los pedidos para su envío\nEmpleado: Clímaco Flor Mariscal\nDía: 7
+Hora: 22:00" group = 7];
+	NodoF23_C4[style="filled" label = "ID: 1\nNombre: Recepción de mercancía\nDescripción: Recepción y revisión de la mercancía entrante\nEmpleado: Cecilia Folch-Calatayud\nDía: 4
+Hora: 23:00" group = 4];
+	Fila23 -> NodoF23_C4[dir=""];
+	{ rank = same; Fila2; NodoF2_C6; }
+	{ rank = same; Fila5; NodoF5_C1; }
+	{ rank = same; Fila6; NodoF6_C2; }
+	{ rank = same; Fila11; NodoF11_C1; }
+	{ rank = same; Fila13; NodoF13_C3; }
+	{ rank = same; Fila15; NodoF15_C3; }
+	{ rank = same; Fila16; NodoF16_C2; NodoF16_C5; }
+	{ rank = same; Fila18; NodoF18_C2; }
+	{ rank = same; Fila20; NodoF20_C4; }
+	{ rank = same; Fila22; NodoF22_C1; NodoF22_C3; NodoF22_C4; NodoF22_C7; }
+	{ rank = same; Fila23; NodoF23_C4; }
+
+}

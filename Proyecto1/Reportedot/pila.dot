@@ -1,0 +1,5 @@
+digraph G {
+    rankdir=LR;
+    node[shape=Mrecord];
+Nodo[xlabel = Pila label = "Nombre: Pan\nCantidad: 2|Nombre: Espejo\nCantidad: 1|Nombre: Sofa\nCantidad: 1"];
+}

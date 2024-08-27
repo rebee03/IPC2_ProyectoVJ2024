@@ -1,0 +1,22 @@
+{% extends "sidebaradmin.html" %} 
+{% block content %}
+<div class="text-center my-6">
+  <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">
+    Ver Reporte De Compras
+  </h2>
+</div>
+<div class="min-h-screen mx-9 my-9 flex flex-col">
+  {% if contenido_comprado %}
+  <textarea
+    class="flex-1 w-full h-96 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500 overflow-auto"
+    readonly
+  >
+{{contenido_comprado}}</textarea>
+  {% else %}
+  <textarea
+    class="flex-1 w-full h-96 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500 overflow-auto"
+    readonly
+  ></textarea>
+  {% endif %}
+</div>
+{% endblock %}

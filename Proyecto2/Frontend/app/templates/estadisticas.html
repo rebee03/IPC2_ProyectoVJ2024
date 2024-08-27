@@ -1,0 +1,155 @@
+{% extends "sidebaradmin.html" %}
+{% load static %}
+{% block content %}
+<div class="text-center my-6">
+    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">Estadísticas</h2>
+</div>
+
+<div class="scroll-container">
+    <div class="section-container">
+        <div class="text-center my-6">
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Categorías con Más Productos</h3>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg shadow-md">
+            <div class="chart-bar">
+                <canvas id="graficaCategorias" height="60"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <div class="text-center my-6">
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Productos con Mayor Cantidad Disponible</h3>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg shadow-md">
+            <div class="chart-bar">
+                <canvas id="graficaProductos" height="60"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function obtenerDatosCategorias() {
+        fetch('http://localhost:5000/productos/topCategorias', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            let categorias = [];
+            let cantidades = [];
+            data.categorias.forEach(element => {
+                categorias.push(element.categoria);
+                cantidades.push(Number(element.cantidad));
+            });
+            graficarCategorias(categorias, cantidades);
+        });
+    }
+
+    function obtenerDatosProductos() {
+        fetch('http://localhost:5000/productos/topCantidad', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            let productos = [];
+            let cantidades = [];
+            data.productos.forEach(element => {
+                productos.push(element.nombre);
+                cantidades.push(Number(element.cantidad));
+            });
+            graficarProductos(productos, cantidades);
+        });
+    }
+
+    function graficarCategorias(categorias, cantidades) {
+        var ctx = document.getElementById('graficaCategorias').getContext('2d');
+        var barChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: categorias,
+                datasets: [{
+                    label: 'Cantidad',
+                    data: cantidades,
+                    backgroundColor:[
+                        'rgb(18, 98, 133 )',
+                        'rgb(23, 123, 166 )',
+                        'rgb(41, 147, 193 )',
+                        
+                        
+                        'rgb(32, 195, 94)',
+                        'rgb(245, 131, 9)',
+                        'rgb(245, 9, 113)'
+                    ]
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    }
+
+    function graficarProductos(productos, cantidades) {
+        var ctx = document.getElementById('graficaProductos').getContext('2d');
+        var barChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: productos,
+                datasets: [{
+                    label: 'Cantidad Disponible',
+                    data: cantidades,
+                    backgroundColor:[
+                        'rgb(188, 48, 17 )',
+                        'rgb(214, 75, 44 )',
+                        'rgb(238, 120, 94 )',
+                        
+
+                        'rgb(147, 46, 212)',
+                        'rgb(12, 134, 229)',
+                        'rgb(32, 195, 94)',
+                        'rgb(245, 131, 9)',
+                        'rgb(245, 9, 113)'
+                    ]
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    }
+
+    obtenerDatosCategorias();
+    obtenerDatosProductos();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<style>
+    .scroll-container {
+        max-height: 600px; /* Establece la altura máxima del contenedor con barra de desplazamiento */
+        overflow-y: auto; /* Habilita la barra de desplazamiento vertical cuando el contenido excede la altura máxima */
+    }
+
+    .section-container {
+        margin-bottom: 20px; /* Espacio entre cada sección */
+    }
+</style>
+{% endblock %}

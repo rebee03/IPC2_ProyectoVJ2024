@@ -1,0 +1,21 @@
+{% extends "sidebaradmin.html" %}
+{% load static %}
+{% block content %}
+<div class="text-center my-6">
+  <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">
+    Documentación Proyecto 2
+  </h2>
+</div>
+<div class="w-full overflow-auto" style="height: 800px;">
+  <div class="bg-white border border-gray-200 rounded-lg shadow-md">
+    <div class="flex items-center justify-around p-4">
+      <embed
+        type="application/pdf"
+        src="{% static 'files/Documentacion_G16.pdf' %}"
+        class="w-full"
+        height="1000"
+      />
+    </div>
+  </div>
+</div>
+{% endblock %}

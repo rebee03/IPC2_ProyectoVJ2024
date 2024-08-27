@@ -1,0 +1,4 @@
+digraph G {
+  rankdir=LR;
+  node [shape = record, height = .1]node0[label = "{Usuario: Monica Deleon\nProductos: PanEspejoSofa\nProductos: 13817.769999999999|<f1>}"];
+}

@@ -1,0 +1,8 @@
+digraph G {
+    rankdir="RL";
+    label="Cola";
+    node[shape=box];
+Nodo0[style="filled", label="Monica Deleon\nPanEspejoSofa\n13817.769999999999", fillcolor="green"];
+
+
+}
